@@ -7,9 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AVFoundation/AVFoundation.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <AVCaptureMetadataOutputObjectsDelegate>
 
+@property (weak, nonatomic) IBOutlet UIView *CapturaDela;
+@property (weak, nonatomic) IBOutlet UILabel *status;
+@property (weak, nonatomic) IBOutlet UIButton *botaoLerCodigo;
 
+- (IBAction)lerCodigo:(UIButton *)sender;
 @end
 
