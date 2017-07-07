@@ -1,10 +1,4 @@
-//
-//  ViewController.m
-//  QueryCodeObjective
-//
-//  Created by Humberto Puccinelli on 20/11/14.
-//  Copyright (c) 2014 Humberto Puccinelli. All rights reserved.
-//
+
 
 #import "ViewController.h"
 
@@ -14,7 +8,6 @@
 @property (nonatomic, strong) AVCaptureVideoPreviewLayer *videoPreviewLayer;
 @property (nonatomic, strong) AVAudioPlayer *audioPlayer;
 @property (nonatomic) BOOL estaLendo;
-
 @end
 
 @implementation ViewController
@@ -28,13 +21,26 @@
     
     [self preCarregarBeep];
     
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self
+                                                                          action:@selector(dismissKeyboard)];
     
+    [self.view addGestureRecognizer:tap];
 }
+
+-(void)dismissKeyboard {
+ //  [UITextField resignFirstResponder];
+    [self.view endEditing:YES];
+    
+
+}
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 
 - (IBAction)lerCodigo:(UIButton *)sender {
     
@@ -46,12 +52,8 @@
             
            // self.botaoLerCodigo.enabled = NO;
             self.status.text = @"Escaneando código";
-            
-            
         }else{
-            
             [self parandoLeitura];
-            
         }
         
     }
@@ -84,6 +86,7 @@
         [_audioPlayer prepareToPlay];
     }
 }
+
 
 -(BOOL)comecarALer{
     
@@ -138,11 +141,13 @@
 }
 
 
+
+
 -(void)captureOutput:(AVCaptureOutput *)captureOutput didOutputMetadataObjects:(NSArray *)metadataObjects fromConnection:(AVCaptureConnection *)connection{
     
     // esse metodo é onde "ligamos" nossa camera para fazer a leitura
-    
-    
+    NSLog(@"leu");
+  
     // checa se o metadataObjects array não é vazio, e que contem ao menos 1 objeto
     if (metadataObjects != nil && [metadataObjects count] > 0) {
        
@@ -151,7 +156,7 @@
         if ([[metadataObj type] isEqualToString:AVMetadataObjectTypeQRCode]) {
             
             [self.status performSelectorOnMainThread:@selector(setText:) withObject:[metadataObj stringValue] waitUntilDone:NO];
-            
+        
             [self performSelectorOnMainThread:@selector(parandoLeitura) withObject:nil waitUntilDone:NO];
             [self.botaoLerCodigo performSelectorOnMainThread:@selector(setTitle:) withObject:@"Start!" waitUntilDone:NO];
             
@@ -164,6 +169,23 @@
             }
         }
     }
+    NSString *string1 = _status.text;
+    
+    BOOL result;
+    
+    result = [string1 hasPrefix: @"com"];
+    
+    if (result)
+        NSLog (@"String begins with The");
+    
+    result = [string1 hasSuffix: @"com"];
+    
+    if (result)
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:string1]];
+    
+//    if ([[_status.text pathExtension] isEqualToString:@".com"]){
+//        NSLog(@"é site");
+//    }
 }
 
 
