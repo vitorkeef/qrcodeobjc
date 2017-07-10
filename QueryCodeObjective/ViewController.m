@@ -171,21 +171,9 @@
     }
     NSString *string1 = _status.text;
     
-    BOOL result;
-    
-    result = [string1 hasPrefix: @"com"];
-    
-    if (result)
-        NSLog (@"String begins with The");
-    
-    result = [string1 hasSuffix: @"com"];
-    
-    if (result)
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:string1]];
-    
-//    if ([[_status.text pathExtension] isEqualToString:@".com"]){
-//        NSLog(@"é site");
-//    }
+    if ([string1 hasSuffix: @"com"] | [string1 hasSuffix: @"br"] |[string1 hasSuffix: @"org"] ){
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:string1]
+         ];}
 }
 
 

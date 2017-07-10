@@ -8,14 +8,12 @@
 
 #import "GeradorViewController.h"
 
+
 @interface GeradorViewController ()
-
-
 
 @end
 
 @implementation GeradorViewController
-
 
 
 
