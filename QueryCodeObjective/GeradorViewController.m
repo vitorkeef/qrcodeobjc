@@ -7,7 +7,7 @@
 //
 
 #import "GeradorViewController.h"
-
+#import "Pessoa.h"
 
 @interface GeradorViewController ()
 
@@ -36,7 +36,15 @@
 }
 
 - (IBAction)gerarQRCode:(id)sender {
-    //_codigoLabel.text = [self randomString:10];
+
+    Pessoa *p = [[Pessoa alloc]init];
+    p.nome = self.txtNome.text;
+    p.idade = self.txtIdade.text.intValue;
+    p.senha = self.txtSenha.text;
+    p.cpf = self.txtCpf.text;
+    
+    
+    NSLog(@"%@", p.nome);
     UIImage *qrImage;
     qrImage = [self generateQrCode:_textCPF.text];
     if (qrImage != NULL)

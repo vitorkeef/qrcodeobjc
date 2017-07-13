@@ -23,9 +23,9 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m3z-mC-1cn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3143" y="-44"/>
+            <point key="canvasLocation" x="-4578" y="-642"/>
         </scene>
-        <!--View Controller-->
+        <!--Leitor QRCODE-->
         <scene sceneID="EHp-VG-W6U">
             <objects>
                 <viewController id="RMR-75-02F" sceneMemberID="viewController">
@@ -56,11 +56,11 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="jP7-XS-Q8q"/>
+                    <navigationItem key="navigationItem" title="Leitor QRCODE" id="jP7-XS-Q8q"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pWd-d6-oD0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1738.4000000000001" y="-43.628185907046479"/>
+            <point key="canvasLocation" x="-3174" y="-641"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
@@ -74,8 +74,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nenhum código ainda" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="20" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OYd-rd-UWR">
+                                <rect key="frame" x="36" y="84" width="302" height="116"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yt0-MO-5kI">
+                                <rect key="frame" x="62" y="211" width="251" height="245"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q77-lA-yIG">
-                                <rect key="frame" x="150" y="114" width="74" height="30"/>
+                                <rect key="frame" x="150" y="490" width="74" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Ler código">
                                     <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -84,23 +96,20 @@
                                     <action selector="lerCodigo:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="0Vg-cs-C8o"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nenhum código ainda" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OYd-rd-UWR">
-                                <rect key="frame" x="36" y="176" width="302" height="21"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4lq-41-Dxm">
+                                <rect key="frame" x="0.0" y="528" width="375" height="72"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yt0-MO-5kI">
-                                <rect key="frame" x="62" y="232" width="251" height="245"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r7z-HX-msa">
+                                        <rect key="frame" x="166" y="26" width="42" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ucu-nG-gMM">
-                                <rect key="frame" x="164" y="571" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
@@ -108,11 +117,13 @@
                         <outlet property="CapturaDela" destination="yt0-MO-5kI" id="Tkt-z2-lsP"/>
                         <outlet property="botaoLerCodigo" destination="q77-lA-yIG" id="Lu2-FY-XRP"/>
                         <outlet property="status" destination="OYd-rd-UWR" id="Qfq-bc-z3B"/>
+                        <outlet property="statusLabel" destination="r7z-HX-msa" id="kjs-bn-Tnh"/>
+                        <outlet property="statusView" destination="4lq-41-Dxm" id="eAs-sS-NsX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-527.20000000000005" y="-473.6131934032984"/>
+            <point key="canvasLocation" x="-1962.4000000000001" y="-1071.8140929535234"/>
         </scene>
         <!--Gerador View Controller-->
         <scene sceneID="xMt-e0-0rR">
@@ -212,14 +223,17 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="codigoLabel" destination="i43-Gp-Qgi" id="KgA-A7-pQg"/>
                         <outlet property="imageQRCOde" destination="ACP-sa-2g8" id="wKf-ho-TOH"/>
                         <outlet property="textCPF" destination="qeE-xs-PU6" id="ou3-gr-dsI"/>
+                        <outlet property="txtCpf" destination="qeE-xs-PU6" id="z2l-3L-WFc"/>
+                        <outlet property="txtIdade" destination="4fq-Ba-a3I" id="Rgb-yr-4qu"/>
+                        <outlet property="txtNome" destination="Q1w-yz-X6A" id="gZ2-VH-Cxz"/>
+                        <outlet property="txtSenha" destination="S1V-Fp-QVt" id="4XL-UV-alS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gec-eC-fbz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-442.39999999999998" y="201.94902548725639"/>
+            <point key="canvasLocation" x="-1962" y="-251"/>
         </scene>
     </scenes>
 </document>

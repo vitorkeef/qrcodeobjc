@@ -10,4 +10,9 @@
 
 @interface Pessoa : NSObject
 
+@property(nonatomic, retain) NSString* nome;
+@property(nonatomic) int idade;
+@property(nonatomic) NSString* senha;
+@property(nonatomic) NSString* cpf;
+
 @end

@@ -1,8 +1,8 @@
 
 
 #import "ViewController.h"
-
-@interface ViewController ()
+#import <MessageUI/MessageUI.h>
+@interface ViewController () <MFMessageComposeViewControllerDelegate>
 
 @property (nonatomic, strong) AVCaptureSession *captureSession;
 @property (nonatomic, strong) AVCaptureVideoPreviewLayer *videoPreviewLayer;
@@ -12,26 +12,24 @@
 
 @implementation ViewController
 
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    
+
     self.captureSession = nil;
     self.estaLendo = NO;
     
-    [self preCarregarBeep];
-    
-    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self
-                                                                          action:@selector(dismissKeyboard)];
-    
-    [self.view addGestureRecognizer:tap];
+    [self lerCodigo:self];
+
+  
 }
 
 -(void)dismissKeyboard {
- //  [UITextField resignFirstResponder];
+    //  [UITextField resignFirstResponder];
     [self.view endEditing:YES];
     
-
+    
 }
 
 
@@ -42,6 +40,10 @@
 }
 
 
+
+
+
+
 - (IBAction)lerCodigo:(UIButton *)sender {
     
     // precisamos primeiramente verificar se nosso usuario já não esta lendo algum código
@@ -50,8 +52,10 @@
         
         if ([self comecarALer]) {
             
-           // self.botaoLerCodigo.enabled = NO;
+            // self.botaoLerCodigo.enabled = NO;
             self.status.text = @"Escaneando código";
+            _statusLabel.text = @"";
+            _statusView.backgroundColor = UIColor.whiteColor;
         }else{
             [self parandoLeitura];
         }
@@ -64,28 +68,6 @@
 }
 
 
--(void)preCarregarBeep{
-    
-    // neste metodo vai fazer o seguite, ele vai deixar nosso beep para ser executado na hora que precisar
-    
-    // criamos a string que contem o nome do nosso arquivo e sua extensão
-    NSString *beepFilePath = [[NSBundle mainBundle] pathForResource:@"beep" ofType:@"mp3"];
-    
-    // criamos agora uma NSURL usando nosso arquivo anterior
-    NSURL *beepURL = [NSURL URLWithString:beepFilePath];
-    
-    // vamo fazer um tratamento de erros, caso não tenhamos erro com nosso arquivo vamos deixar nosso beep pronto para ser executado
-    NSError *error;
-        _audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:beepURL error:&error];
-    if (error) {
-        
-        NSLog(@"Erro ao abrir o som");
-        NSLog(@"%@", [error localizedDescription]);
-    }
-    else{
-        [_audioPlayer prepareToPlay];
-    }
-}
 
 
 -(BOOL)comecarALer{
@@ -94,7 +76,7 @@
     
     // criamos nossas instancias de captura de imagem
     AVCaptureDevice *captureDevice = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
-   
+    
     AVCaptureDeviceInput *input = [AVCaptureDeviceInput deviceInputWithDevice:captureDevice error:&error];
     
     if (!input) {
@@ -142,21 +124,51 @@
 
 
 
+-(void)checagemCodigo{
+    
+    NSArray *array = @[@"teste", @"segunda palavra", @"terceiro", @"alianca"];
+    
+    BOOL hasString = [array containsObject:_status.text];
+    if (hasString){
+        //NSLog(@"%@", hasString);
+        NSLog(@"tem string");
+        _statusView.backgroundColor = UIColor.greenColor;
+        _statusLabel.text = @"OK";
+    }else if (!hasString){
+        NSLog(@"nao tem");
+        _statusView.backgroundColor = UIColor.redColor;
+        _statusLabel.text = @"erro";
+    }
+    
+    
+    //    if ([_status.text  isEqual: @"teste"]) {
+    //        NSLog(@"OK");
+    //        _statusView.backgroundColor = UIColor.greenColor;
+    //        _statusLabel.text = @"OK";
+    //    }
+    //    else{
+    //        NSLog(@"N OK");
+    //        _statusView.backgroundColor = UIColor.redColor;
+    //
+    //    }
+    
+}
+
 
 -(void)captureOutput:(AVCaptureOutput *)captureOutput didOutputMetadataObjects:(NSArray *)metadataObjects fromConnection:(AVCaptureConnection *)connection{
     
     // esse metodo é onde "ligamos" nossa camera para fazer a leitura
     NSLog(@"leu");
-  
+    
     // checa se o metadataObjects array não é vazio, e que contem ao menos 1 objeto
     if (metadataObjects != nil && [metadataObjects count] > 0) {
-       
+        
         AVMetadataMachineReadableCodeObject *metadataObj = [metadataObjects objectAtIndex:0];
         
         if ([[metadataObj type] isEqualToString:AVMetadataObjectTypeQRCode]) {
             
             [self.status performSelectorOnMainThread:@selector(setText:) withObject:[metadataObj stringValue] waitUntilDone:NO];
-        
+            
             [self performSelectorOnMainThread:@selector(parandoLeitura) withObject:nil waitUntilDone:NO];
             [self.botaoLerCodigo performSelectorOnMainThread:@selector(setTitle:) withObject:@"Start!" waitUntilDone:NO];
             
@@ -171,9 +183,75 @@
     }
     NSString *string1 = _status.text;
     
+    
     if ([string1 hasSuffix: @"com"] | [string1 hasSuffix: @"br"] |[string1 hasSuffix: @"org"] ){
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:string1]
-         ];}
+        //[[UIApplication sharedApplication] openURL:[NSURL URLWithString:string1]
+        NSString *linkFinal = @"http://";
+        linkFinal = [linkFinal stringByAppendingString:string1];
+        NSLog(@"%@", string1);
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:  linkFinal]];
+        ;}else if ([string1 hasPrefix:@"http://"]){
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:string1]
+             ];}
+    
+    if ([string1 hasPrefix:@"SMS"]) {
+        [self showSMS:@"teste"];
+    }
+    
+    [self checagemCodigo];
+    
+}
+- (void)showSMS:(NSString*)file {
+    
+    if(![MFMessageComposeViewController canSendText]) {
+        UIAlertView *warningAlert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Your device doesn't support SMS!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [warningAlert show];
+        return;
+    }
+    NSString *mensagem = _status.text;
+    NSString *contato = [mensagem substringWithRange:NSMakeRange(6, 10)];
+    float tamanhoMensagem = [mensagem length];
+    
+    //    NSString *textomensagem = [mensagem substringWithRange:NSMakeRange(10, 10 )];
+    NSLog(@"%@", contato);
+    NSLog(@"%f", tamanhoMensagem);
+    //    NSLog(@"%@ textomensagem", textomensagem);
+    NSLog(@"%@", mensagem);
+    
+    //SMSTO:1197992979:jj
+    NSArray *recipents = @[contato];
+    NSString *message = [NSString stringWithFormat:@"Just sent the %@ file to your email. Please check!", file];
+    
+    MFMessageComposeViewController *messageController = [[MFMessageComposeViewController alloc] init];
+    messageController.messageComposeDelegate = self;
+    [messageController setRecipients:recipents];
+    [messageController setBody:message];
+    
+    // Present message view controller on screen
+    [self presentViewController:messageController animated:YES completion:nil];
+}
+
+- (void)messageComposeViewController:(MFMessageComposeViewController *)controller didFinishWithResult:(MessageComposeResult) result
+{
+    switch (result) {
+        case MessageComposeResultCancelled:
+            break;
+            
+        case MessageComposeResultFailed:
+        {
+            UIAlertView *warningAlert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Failed to send SMS!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            [warningAlert show];
+            break;
+        }
+            
+        case MessageComposeResultSent:
+            break;
+            
+        default:
+            break;
+    }
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 

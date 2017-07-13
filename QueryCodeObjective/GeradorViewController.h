@@ -8,9 +8,13 @@
 
 #import "ViewController.h"
 
-@interface GeradorViewController : ViewController
+@interface GeradorViewController : ViewController 
 
-@property (weak, nonatomic) IBOutlet UILabel *codigoLabel;
+@property (weak, nonatomic) IBOutlet UITextField *txtNome;
+@property (weak, nonatomic) IBOutlet UITextField *txtIdade;
+@property (weak, nonatomic) IBOutlet UITextField *txtSenha;
+@property (weak, nonatomic) IBOutlet UITextField *txtCpf;
+
 - (IBAction)gerarQRCode:(id)sender;
 @property (weak, nonatomic) IBOutlet UIImageView *imageQRCOde;
 @property (weak, nonatomic) IBOutlet UITextField *textCPF;

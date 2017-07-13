@@ -14,7 +14,8 @@
 @property (weak, nonatomic) IBOutlet UIView *CapturaDela;
 @property (weak, nonatomic) IBOutlet UILabel *status;
 @property (weak, nonatomic) IBOutlet UIButton *botaoLerCodigo;
-- (IBAction)testarweb:(id)sender;
+@property (weak, nonatomic) IBOutlet UIView *statusView;
+@property (weak, nonatomic) IBOutlet UILabel *statusLabel;
 
 
 - (IBAction)lerCodigo:(UIButton *)sender;

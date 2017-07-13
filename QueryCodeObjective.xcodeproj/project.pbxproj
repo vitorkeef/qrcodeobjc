@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A3528C861F16A0940078F0FA /* Pessoa.m in Sources */ = {isa = PBXBuildFile; fileRef = A3528C851F16A0940078F0FA /* Pessoa.m */; };
+		A357369D1F150E9A00CE4F0D /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A357369C1F150E9A00CE4F0D /* MessageUI.framework */; };
 		AE71BDEC1A1DFB1D00B3FBFA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AE71BDEB1A1DFB1D00B3FBFA /* main.m */; };
 		AE71BDEF1A1DFB1D00B3FBFA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AE71BDEE1A1DFB1D00B3FBFA /* AppDelegate.m */; };
 		AE71BDF21A1DFB1D00B3FBFA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE71BDF11A1DFB1D00B3FBFA /* ViewController.m */; };
@@ -14,9 +16,7 @@
 		AE71BDF71A1DFB1D00B3FBFA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE71BDF61A1DFB1D00B3FBFA /* Images.xcassets */; };
 		AE71BDFA1A1DFB1D00B3FBFA /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE71BDF81A1DFB1D00B3FBFA /* LaunchScreen.xib */; };
 		AE71BE061A1DFB1D00B3FBFA /* QueryCodeObjectiveTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AE71BE051A1DFB1D00B3FBFA /* QueryCodeObjectiveTests.m */; };
-		AE71BE101A1E069400B3FBFA /* beep.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AE71BE0F1A1E069400B3FBFA /* beep.mp3 */; };
 		E831E1CC1F0E8F010047B031 /* GeradorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E831E1CB1F0E8F010047B031 /* GeradorViewController.m */; };
-		E831E1CF1F0EB2370047B031 /* Gerador.swift in Sources */ = {isa = PBXBuildFile; fileRef = E831E1CE1F0EB2370047B031 /* Gerador.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,6 +30,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A3528C841F16A0940078F0FA /* Pessoa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pessoa.h; sourceTree = "<group>"; };
+		A3528C851F16A0940078F0FA /* Pessoa.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Pessoa.m; sourceTree = "<group>"; };
+		A357369C1F150E9A00CE4F0D /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		AE71BDE61A1DFB1D00B3FBFA /* QueryCodeObjective.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QueryCodeObjective.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE71BDEA1A1DFB1D00B3FBFA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AE71BDEB1A1DFB1D00B3FBFA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -43,11 +46,8 @@
 		AE71BDFF1A1DFB1D00B3FBFA /* QueryCodeObjectiveTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QueryCodeObjectiveTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE71BE041A1DFB1D00B3FBFA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AE71BE051A1DFB1D00B3FBFA /* QueryCodeObjectiveTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QueryCodeObjectiveTests.m; sourceTree = "<group>"; };
-		AE71BE0F1A1E069400B3FBFA /* beep.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = beep.mp3; sourceTree = "<group>"; };
 		E831E1CA1F0E8F010047B031 /* GeradorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeradorViewController.h; sourceTree = "<group>"; };
 		E831E1CB1F0E8F010047B031 /* GeradorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeradorViewController.m; sourceTree = "<group>"; };
-		E831E1CD1F0EB2360047B031 /* QueryCodeObjective-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "QueryCodeObjective-Bridging-Header.h"; sourceTree = "<group>"; };
-		E831E1CE1F0EB2370047B031 /* Gerador.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gerador.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A357369D1F150E9A00CE4F0D /* MessageUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,12 +69,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A357369B1F150E9A00CE4F0D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A357369C1F150E9A00CE4F0D /* MessageUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		AE71BDDD1A1DFB1D00B3FBFA = {
 			isa = PBXGroup;
 			children = (
 				AE71BDE81A1DFB1D00B3FBFA /* QueryCodeObjective */,
 				AE71BE021A1DFB1D00B3FBFA /* QueryCodeObjectiveTests */,
 				AE71BDE71A1DFB1D00B3FBFA /* Products */,
+				A357369B1F150E9A00CE4F0D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -89,7 +99,6 @@
 		AE71BDE81A1DFB1D00B3FBFA /* QueryCodeObjective */ = {
 			isa = PBXGroup;
 			children = (
-				E831E1CE1F0EB2370047B031 /* Gerador.swift */,
 				AE71BDED1A1DFB1D00B3FBFA /* AppDelegate.h */,
 				AE71BDEE1A1DFB1D00B3FBFA /* AppDelegate.m */,
 				AE71BDF01A1DFB1D00B3FBFA /* ViewController.h */,
@@ -97,11 +106,11 @@
 				AE71BDF31A1DFB1D00B3FBFA /* Main.storyboard */,
 				E831E1CA1F0E8F010047B031 /* GeradorViewController.h */,
 				E831E1CB1F0E8F010047B031 /* GeradorViewController.m */,
-				AE71BE0F1A1E069400B3FBFA /* beep.mp3 */,
 				AE71BDF61A1DFB1D00B3FBFA /* Images.xcassets */,
 				AE71BDF81A1DFB1D00B3FBFA /* LaunchScreen.xib */,
 				AE71BDE91A1DFB1D00B3FBFA /* Supporting Files */,
-				E831E1CD1F0EB2360047B031 /* QueryCodeObjective-Bridging-Header.h */,
+				A3528C841F16A0940078F0FA /* Pessoa.h */,
+				A3528C851F16A0940078F0FA /* Pessoa.m */,
 			);
 			path = QueryCodeObjective;
 			sourceTree = "<group>";
@@ -216,7 +225,6 @@
 			files = (
 				AE71BDF51A1DFB1D00B3FBFA /* Main.storyboard in Resources */,
 				AE71BDFA1A1DFB1D00B3FBFA /* LaunchScreen.xib in Resources */,
-				AE71BE101A1E069400B3FBFA /* beep.mp3 in Resources */,
 				AE71BDF71A1DFB1D00B3FBFA /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -235,10 +243,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E831E1CF1F0EB2370047B031 /* Gerador.swift in Sources */,
 				AE71BDF21A1DFB1D00B3FBFA /* ViewController.m in Sources */,
 				E831E1CC1F0E8F010047B031 /* GeradorViewController.m in Sources */,
 				AE71BDEF1A1DFB1D00B3FBFA /* AppDelegate.m in Sources */,
+				A3528C861F16A0940078F0FA /* Pessoa.m in Sources */,
 				AE71BDEC1A1DFB1D00B3FBFA /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -389,7 +397,6 @@
 		AE71BE0D1A1DFB1D00B3FBFA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -409,7 +416,6 @@
 		AE71BE0E1A1DFB1D00B3FBFA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
