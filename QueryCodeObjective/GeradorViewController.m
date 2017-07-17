@@ -2,8 +2,8 @@
 //  GeradorViewController.m
 //  QueryCodeObjective
 //
-//  Created by MakroTest on 06/07/17.
-//  Copyright © 2017 Vitor Leone Prado. All rights reserved.
+//  Created by Vitor Leone Prado on 07/07/17.
+//  Copyright (c) 2014 Vitor Leone Prado. All rights reserve
 //
 
 #import "GeradorViewController.h"
@@ -15,34 +15,30 @@
 
 @implementation GeradorViewController
 
-
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
-    
     [self.view addGestureRecognizer:tap];
 }
 
 -(void)dismissKeyboard {
     //  [UITextField resignFirstResponder];
     [self.view endEditing:YES];
-    
-    
 }
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
 - (IBAction)gerarQRCode:(id)sender {
-
+    
     Pessoa *p = [[Pessoa alloc]init];
     p.nome = self.txtNome.text;
     p.idade = self.txtIdade.text.intValue;
     p.senha = self.txtSenha.text;
     p.cpf = self.txtCpf.text;
-    
+ 
     
     NSLog(@"%@", p.nome);
     UIImage *qrImage;

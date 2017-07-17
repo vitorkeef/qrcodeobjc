@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A34F48D31F1CE79F005F94AF /* TBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A34F48D21F1CE79F005F94AF /* TBViewController.m */; };
 		A3528C861F16A0940078F0FA /* Pessoa.m in Sources */ = {isa = PBXBuildFile; fileRef = A3528C851F16A0940078F0FA /* Pessoa.m */; };
 		A357369D1F150E9A00CE4F0D /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A357369C1F150E9A00CE4F0D /* MessageUI.framework */; };
+		A3B958B61F19087300FA55C7 /* SegundaClasse.m in Sources */ = {isa = PBXBuildFile; fileRef = A3B958B51F19087300FA55C7 /* SegundaClasse.m */; };
 		AE71BDEC1A1DFB1D00B3FBFA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AE71BDEB1A1DFB1D00B3FBFA /* main.m */; };
 		AE71BDEF1A1DFB1D00B3FBFA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AE71BDEE1A1DFB1D00B3FBFA /* AppDelegate.m */; };
 		AE71BDF21A1DFB1D00B3FBFA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE71BDF11A1DFB1D00B3FBFA /* ViewController.m */; };
@@ -30,9 +32,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A34F48D11F1CE79F005F94AF /* TBViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBViewController.h; sourceTree = "<group>"; };
+		A34F48D21F1CE79F005F94AF /* TBViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBViewController.m; sourceTree = "<group>"; };
 		A3528C841F16A0940078F0FA /* Pessoa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pessoa.h; sourceTree = "<group>"; };
 		A3528C851F16A0940078F0FA /* Pessoa.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Pessoa.m; sourceTree = "<group>"; };
 		A357369C1F150E9A00CE4F0D /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		A3B958B41F19087300FA55C7 /* SegundaClasse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SegundaClasse.h; path = ../SegundaClasse.h; sourceTree = "<group>"; };
+		A3B958B51F19087300FA55C7 /* SegundaClasse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SegundaClasse.m; path = ../SegundaClasse.m; sourceTree = "<group>"; };
 		AE71BDE61A1DFB1D00B3FBFA /* QueryCodeObjective.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QueryCodeObjective.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE71BDEA1A1DFB1D00B3FBFA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AE71BDEB1A1DFB1D00B3FBFA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -99,11 +105,15 @@
 		AE71BDE81A1DFB1D00B3FBFA /* QueryCodeObjective */ = {
 			isa = PBXGroup;
 			children = (
+				A3B958B41F19087300FA55C7 /* SegundaClasse.h */,
+				A3B958B51F19087300FA55C7 /* SegundaClasse.m */,
 				AE71BDED1A1DFB1D00B3FBFA /* AppDelegate.h */,
 				AE71BDEE1A1DFB1D00B3FBFA /* AppDelegate.m */,
 				AE71BDF01A1DFB1D00B3FBFA /* ViewController.h */,
 				AE71BDF11A1DFB1D00B3FBFA /* ViewController.m */,
 				AE71BDF31A1DFB1D00B3FBFA /* Main.storyboard */,
+				A34F48D11F1CE79F005F94AF /* TBViewController.h */,
+				A34F48D21F1CE79F005F94AF /* TBViewController.m */,
 				E831E1CA1F0E8F010047B031 /* GeradorViewController.h */,
 				E831E1CB1F0E8F010047B031 /* GeradorViewController.m */,
 				AE71BDF61A1DFB1D00B3FBFA /* Images.xcassets */,
@@ -186,7 +196,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0610;
-				ORGANIZATIONNAME = "Humberto Puccinelli";
+				ORGANIZATIONNAME = "Vitor Leone Prado";
 				TargetAttributes = {
 					AE71BDE51A1DFB1D00B3FBFA = {
 						CreatedOnToolsVersion = 6.1;
@@ -247,6 +257,8 @@
 				E831E1CC1F0E8F010047B031 /* GeradorViewController.m in Sources */,
 				AE71BDEF1A1DFB1D00B3FBFA /* AppDelegate.m in Sources */,
 				A3528C861F16A0940078F0FA /* Pessoa.m in Sources */,
+				A34F48D31F1CE79F005F94AF /* TBViewController.m in Sources */,
+				A3B958B61F19087300FA55C7 /* SegundaClasse.m in Sources */,
 				AE71BDEC1A1DFB1D00B3FBFA /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

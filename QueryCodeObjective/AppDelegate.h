@@ -2,8 +2,8 @@
 //  AppDelegate.h
 //  QueryCodeObjective
 //
-//  Created by Humberto Puccinelli on 20/11/14.
-//  Copyright (c) 2014 Humberto Puccinelli. All rights reserved.
+//  Created by Vitor Leone Prado on 07/07/17.
+//  Copyright (c) 2014 Vitor Leone Prado. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

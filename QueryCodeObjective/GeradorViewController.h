@@ -2,8 +2,8 @@
 //  GeradorViewController.h
 //  QueryCodeObjective
 //
-//  Created by MakroTest on 06/07/17.
-//  Copyright © 2017 Vitor Leone Prado. All rights reserved.
+//  Created by Vitor Leone Prado on 07/07/17.
+//  Copyright (c) 2014 Vitor Leone Prado. All rights reserve
 //
 
 #import "ViewController.h"

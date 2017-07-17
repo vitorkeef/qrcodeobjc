@@ -141,7 +141,7 @@
     }
     
     
-    //    if ([_status.text  isEqual: @"teste"]) {
+    //    if ([_status.text  is2l: @"teste"]) {
     //        NSLog(@"OK");
     //        _statusView.backgroundColor = UIColor.greenColor;
     //        _statusLabel.text = @"OK";

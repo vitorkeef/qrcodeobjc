@@ -2,8 +2,8 @@
 //  ViewController.h
 //  QueryCodeObjective
 //
-//  Created by Vitor Leone Prado on 20/11/14.
-//  Copyright (c) 2014 Vitor Leone Prado. All rights reserved.
+//  Created by Vitor Leone Prado on 07/07/17.
+//  Copyright (c) 2014 Vitor Leone Prado. All rights reserve
 //
 
 #import <UIKit/UIKit.h>
