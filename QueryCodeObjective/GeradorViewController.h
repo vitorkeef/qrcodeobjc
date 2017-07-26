@@ -5,7 +5,6 @@
 //  Created by Vitor Leone Prado on 07/07/17.
 //  Copyright (c) 2014 Vitor Leone Prado. All rights reserve
 //
-
 #import "ViewController.h"
 
 @interface GeradorViewController : ViewController 
@@ -14,10 +13,12 @@
 @property (weak, nonatomic) IBOutlet UITextField *txtIdade;
 @property (weak, nonatomic) IBOutlet UITextField *txtSenha;
 @property (weak, nonatomic) IBOutlet UITextField *txtCpf;
+@property (weak, nonatomic) IBOutlet UITextField *txtSenhaConfirmar;
 
 - (IBAction)gerarQRCode:(id)sender;
 @property (weak, nonatomic) IBOutlet UIImageView *imageQRCOde;
 @property (weak, nonatomic) IBOutlet UITextField *textCPF;
+@property (weak, nonatomic) IBOutlet UIButton *btncadastrar;
 
 
 

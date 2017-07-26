@@ -16,6 +16,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *botaoLerCodigo;
 @property (weak, nonatomic) IBOutlet UIView *statusView;
 @property (weak, nonatomic) IBOutlet UILabel *statusLabel;
+@property(strong, nonatomic) NSArray *data;
 
 
 - (IBAction)lerCodigo:(UIButton *)sender;

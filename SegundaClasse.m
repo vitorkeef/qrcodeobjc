@@ -47,5 +47,6 @@
         _labelText.text = [NSString stringWithFormat:@"%i", i];
         NSLog(@"%d", i);
     }
+    
 }
 @end

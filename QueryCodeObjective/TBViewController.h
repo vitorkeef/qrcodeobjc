@@ -10,4 +10,8 @@
 
 @interface TBViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
+
+@property(strong, nonatomic) NSArray *data;
+
+
 @end

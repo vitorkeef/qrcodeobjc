@@ -1,4 +1,5 @@
 
+#import "AFURLSessionManager.h"
 
 #import "ViewController.h"
 #import <MessageUI/MessageUI.h>
@@ -22,7 +23,7 @@
     
     [self lerCodigo:self];
 
-  
+ 
 }
 
 -(void)dismissKeyboard {
@@ -123,7 +124,6 @@
 }
 
 
-
 -(void)checagemCodigo{
     
     NSArray *array = @[@"teste", @"segunda palavra", @"terceiro", @"alianca"];
@@ -139,18 +139,7 @@
         _statusView.backgroundColor = UIColor.redColor;
         _statusLabel.text = @"erro";
     }
-    
-    
-    //    if ([_status.text  is2l: @"teste"]) {
-    //        NSLog(@"OK");
-    //        _statusView.backgroundColor = UIColor.greenColor;
-    //        _statusLabel.text = @"OK";
-    //    }
-    //    else{
-    //        NSLog(@"N OK");
-    //        _statusView.backgroundColor = UIColor.redColor;
-    //
-    //    }
+
     
 }
 

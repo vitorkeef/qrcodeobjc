@@ -58,7 +58,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
-                                    <segue destination="ikP-VX-SIf" kind="show" id="rh1-5s-Q1f"/>
+                                    <segue destination="ikP-VX-SIf" kind="show" id="8pN-QH-Vrb"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -151,7 +151,7 @@
                                 <state key="normal" title="Button"/>
                                 <connections>
                                     <action selector="loopFor:" destination="ikP-VX-SIf" eventType="touchUpInside" id="rd7-ng-okN"/>
-                                    <segue destination="aeg-gt-bl7" kind="showDetail" id="Mg0-tz-skC"/>
+                                    <segue destination="aeg-gt-bl7" kind="show" id="0yA-Le-fn7"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sMg-4S-eMO">
@@ -203,7 +203,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="V97-qr-u43">
-                                <rect key="frame" x="0.0" y="20" width="514" height="647"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <rect key="contentStretch" x="0.40000000000000002" y="0.0" width="0.65000000000000002" height="1"/>
@@ -232,14 +232,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8T2-ak-i78">
-                                <rect key="frame" x="105" y="361" width="155" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Cadastrar"/>
-                                <connections>
-                                    <action selector="gerarQRCode:" destination="3st-cK-77G" eventType="touchUpInside" id="hva-Vc-IPz"/>
-                                </connections>
-                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ACP-sa-2g8">
                                 <rect key="frame" x="63" y="421" width="249" height="238"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -314,21 +306,31 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8T2-ak-i78">
+                                <rect key="frame" x="63" y="361" width="249" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Cadastrar"/>
+                                <connections>
+                                    <action selector="gerarQRCode:" destination="3st-cK-77G" eventType="touchUpInside" id="hva-Vc-IPz"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="btncadastrar" destination="8T2-ak-i78" id="Utg-JI-BpM"/>
                         <outlet property="imageQRCOde" destination="ACP-sa-2g8" id="wKf-ho-TOH"/>
                         <outlet property="textCPF" destination="qeE-xs-PU6" id="ou3-gr-dsI"/>
                         <outlet property="txtCpf" destination="qeE-xs-PU6" id="z2l-3L-WFc"/>
                         <outlet property="txtIdade" destination="4fq-Ba-a3I" id="Rgb-yr-4qu"/>
                         <outlet property="txtNome" destination="Q1w-yz-X6A" id="gZ2-VH-Cxz"/>
                         <outlet property="txtSenha" destination="S1V-Fp-QVt" id="4XL-UV-alS"/>
+                        <outlet property="txtSenhaConfirmar" destination="t4v-7i-ymH" id="HII-Or-Gbx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gec-eC-fbz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1562" y="-644"/>
+            <point key="canvasLocation" x="-1562.4000000000001" y="-644.52773613193403"/>
         </scene>
     </scenes>
 </document>
