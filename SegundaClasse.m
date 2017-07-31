@@ -28,14 +28,14 @@
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 - (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView
 {
@@ -48,5 +48,24 @@
         NSLog(@"%d", i);
     }
     
+}
+- (IBAction)btnHora:(id)sender {
+    NSString *strCurrentDate;
+    NSString *strNewDate;
+    NSDate *date = [NSDate date];
+    NSDateFormatter *df =[[NSDateFormatter alloc]init];
+    [df setDateStyle:NSDateFormatterMediumStyle];
+    [df setTimeStyle:NSDateFormatterMediumStyle];
+    strCurrentDate = [df stringFromDate:date];
+    NSLog(@"Current Date and Time: %@",strCurrentDate);
+    int hoursToAdd = 3;
+    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+    NSDateComponents *components = [[NSDateComponents alloc] init];
+    [components setHour:hoursToAdd];
+    NSDate *newDate= [calendar dateByAddingComponents:components toDate:date options:0];
+    [df setDateStyle:NSDateFormatterMediumStyle];
+    [df setTimeStyle:NSDateFormatterMediumStyle];
+    strNewDate = [df stringFromDate:newDate];
+    NSLog(@"New Date and Time: %@",strNewDate);
 }
 @end

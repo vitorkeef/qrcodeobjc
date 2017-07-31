@@ -1,3 +1,4 @@
+
 //
 //  GeradorViewController.m
 //  QueryCodeObjective
@@ -13,17 +14,19 @@
 @interface GeradorViewController ()
 
 @end
-
+int i = 0;
 @implementation GeradorViewController
-int codigoId = 0;
-
+NSString *codigoID;
 - (void)viewDidLoad {
     [super viewDidLoad];
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
     [self.view addGestureRecognizer:tap];
+    
+    
+    
+}
+-(void)viewDidAppear:(BOOL)animated{
     [self chamarAlerta];
-    
-    
 }
 -(void) chamarAlerta{
     
@@ -36,8 +39,8 @@ int codigoId = 0;
                                   actionWithTitle:@"Pegar Usuário Existente"
                                   style:UIAlertActionStyleDefault
                                   handler:^(UIAlertAction * _Nonnull action) {
-                                     [self getjson];
-                                   //   [self escolherUsuario];
+                                      //  [self getjson];
+                                      [self escolherUsuario];
                                   }];
     UIAlertAction *gerarUmNovo = [UIAlertAction
                                   actionWithTitle:@"Gerar Um novo usuário "
@@ -58,26 +61,32 @@ int codigoId = 0;
 
 
 -(void) escolherUsuario{
-    UIAlertController * alertController = [UIAlertController alertControllerWithTitle: @"Encontre o usuário"
-                                                                              message: @"Digite o seu código."
-                                                                       preferredStyle:UIAlertControllerStyleAlert];
-    [alertController addTextFieldWithConfigurationHandler:^(UITextField *textField) {
-        textField.placeholder = @"código";
-        textField.textColor = [UIColor blueColor];
-        textField.clearButtonMode = UITextFieldViewModeWhileEditing;
-        textField.borderStyle = UITextBorderStyleRoundedRect;
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Enter Text"
+                                                                   message:@"Enter some text below"
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction *submit = [UIAlertAction actionWithTitle:@"Submit" style:UIAlertActionStyleDefault
+                                                   handler:^(UIAlertAction * action) {
+                                                       
+                                                       if (alert.textFields.count > 0) {
+                                                           
+                                                           UITextField *textField = [alert.textFields firstObject];
+                                                           
+                                                           NSLog(textField.text);
+                                                           i = [textField.text intValue];
+                                                           [self getjson];
+                                         
+                                                        }
+                                             
+                                                   }];
+    
+    [alert addAction:submit];
+    
+    [alert addTextFieldWithConfigurationHandler:^(UITextField *textField) {
+        textField.placeholder = @"something"; // if needs
     }];
     
-    [alertController addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-        NSArray * textfields = alertController.textFields;
-        codigoId = [textfields[0] intValue];
-        NSLog(@"%i", codigoId);
-        [self getjson];
-    
-    }]];
-    
-    [self presentViewController:alertController animated:YES completion:nil];
-    
+    [self presentViewController:alert animated:YES completion:nil];
     
 }
 
@@ -93,12 +102,6 @@ int codigoId = 0;
 
 - (IBAction)gerarQRCode:(id)sender {
     
-    //    Pessoa *p = [[Pessoa alloc]init];
-    //    p.nome = self.txtNome.text;
-    //    p.idade = self.txtIdade.text.intValue;
-    //    p.senha = self.txtSenha.text;
-    //    p.cpf = self.txtCpf.text;
-    //    NSLog(@"%@", p.nome);
     
     UIImage *qrImage;
     qrImage = [self generateQrCode:_textCPF.text];
@@ -134,7 +137,7 @@ int codigoId = 0;
     
     NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
     AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];
-     
+    
     
     NSURL *URL = [NSURL URLWithString:@"http://www.json-generator.com/api/json/get/cnagmdryEO?indent=2"];
     NSURLRequest *request = [NSURLRequest requestWithURL:URL];
@@ -142,9 +145,9 @@ int codigoId = 0;
         if (error) {
             NSLog(@"Error: %@", error);
         } else {
-            NSLog(@"%d", codigoId);
-            float i = 1;
+           
             self.data = responseObject;
+
             NSString *nome = [[self.data objectAtIndex:i]objectForKey:@"name"];
             NSString *idade = [[[self.data objectAtIndex:i]objectForKey:@"idade"]stringValue];
             NSString *senha = [[[self.data objectAtIndex:i]objectForKey:@"senha"]stringValue];
@@ -167,11 +170,6 @@ int codigoId = 0;
     
 }
 
-
-
--(NSString *)randomcodeman:(int)lenght{
-    return nil;
-}
 
 
 -(id)generateQrCode:(NSString *)string

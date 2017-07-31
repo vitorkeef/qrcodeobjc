@@ -12,6 +12,7 @@
 - (IBAction)loopFor:(id)sender;
 @property (weak, nonatomic) IBOutlet UILabel *labelText;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollview;
+- (IBAction)btnHora:(id)sender;
 
 @property (weak, nonatomic) IBOutlet UILabel *labelinsidescroll;
 
